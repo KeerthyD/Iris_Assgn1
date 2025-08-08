@@ -4,17 +4,20 @@ import joblib
 import pandas as pd
 import os
 from utils.logger import init_db, log_prediction
+from pydantic import BaseModel, Field
+from prometheus_fastapi_instrumentator import Instrumentator
 
 # 1. Define the FastAPI app
 app = FastAPI()
+Instrumentator().instrument(app).expose(app)
 
 
 # 2. Input schema using Pydantic
 class IrisInput(BaseModel):
-    sepal_length: float
-    sepal_width: float
-    petal_length: float
-    petal_width: float
+    sepal_length: float = Field(..., ge=4.0, le=8.0)
+    sepal_width: float = Field(..., ge=2.0, le=5.0)
+    petal_length: float = Field(..., ge=1.0, le=7.0)
+    petal_width: float = Field(..., ge=0.1, le=3.0)
 
 
 # 3. Load the model (adjust path if needed)
