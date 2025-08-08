@@ -1,10 +1,9 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 import joblib
 import pandas as pd
 import os
 from utils.logger import init_db, log_prediction
-from pydantic import BaseModel, Field
 from prometheus_fastapi_instrumentator import Instrumentator
 
 # 1. Define the FastAPI app
