@@ -70,7 +70,7 @@ if __name__ == "__main__":
         X, y)
 
     results.append((name1, score1, model1))
-    print("\n--- Training Random Forest ---")                 
+    print("\n--- Training Random Forest ---")
     name2, score2, model2 = train_and_log_model(
         RandomForestClassifier(n_estimators=100, random_state=42),
         "RandomForest",
