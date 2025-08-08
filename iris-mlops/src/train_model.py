@@ -19,8 +19,9 @@ def load_data() -> Tuple[pd.DataFrame, pd.Series]:
     """Loads the Iris dataset as a pandas DataFrame."""
     iris = load_iris(as_frame=True)
     df = iris.frame
-    df.columns =['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'target']
-    X = df.drop(columns=["target"]).astype("float64")  # Ensure schema consistency
+    df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width',
+     'target']
+    X = df.drop(columns=["target"]).astype("float64")
     y = df["target"]
     return X, y
 
@@ -79,7 +80,7 @@ if __name__ == "__main__":
     # Determine best model
     best_model_name, best_score, best_model = max(results, key=lambda x: x[1])
     print(f"\n🏆 Best model based on CV accuracy:{best_model_name} ({best_score:.4f})")
-    
+
     # ✅ Save best model as 'best_model.pkl' for API
     best_model_path = "models/best_model.pkl"
     joblib.dump(best_model, best_model_path)
