@@ -79,9 +79,9 @@ if __name__ == "__main__":
     
     # Determine best model
     best_model_name, best_score, best_model = max(results, key=lambda x: x[1])
-    print(f"\n Best model based on CV accuracy:
-    {best_model_name} ({best_score:.4f})")
-
+    print("\n🏆 Best model based on CV accuracy:")
+    print(f"{best_model_name} ({best_score:.4f})")
+    
     # ✅ Save best model as 'best_model.pkl' for API
     best_model_path = "models/best_model.pkl"
     joblib.dump(best_model, best_model_path)
