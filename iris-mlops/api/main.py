@@ -9,12 +9,16 @@ import os
 app = FastAPI()
 
 
+
+
 # 2. Input schema using Pydantic
 class IrisInput(BaseModel):
     sepal_length: float
     sepal_width: float
     petal_length: float
     petal_width: float
+
+
 
 
 # 3. Load the model (adjust path if needed)
@@ -24,6 +28,8 @@ if not os.path.exists(MODEL_PATH):
     raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
 
 model = joblib.load(MODEL_PATH)
+
+
 
 
 # 4. Define prediction route
