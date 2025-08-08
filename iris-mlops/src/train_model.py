@@ -13,11 +13,13 @@ from typing import Tuple, Any
 # ===================================================================
 # Step 1: Load and prepare the data
 # ===================================================================
+
 def load_data() -> Tuple[pd.DataFrame, pd.Series]:
     """Loads the Iris dataset as a pandas DataFrame."""
     iris = load_iris(as_frame=True)
     df = iris.frame
-    df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'target']
+    df.columns = ['sepal_length', 'sepal_width', 'petal_length',
+                   'petal_width', 'target']
     
     X = df.drop(columns=["target"]).astype("float64")  # Ensure schema consistency
     y = df["target"]
@@ -26,7 +28,9 @@ def load_data() -> Tuple[pd.DataFrame, pd.Series]:
 # ===================================================================
 # Step 2: Train and log the model using cross-validation
 # ===================================================================
-def train_and_log_model(model: Any, model_name: str, X: pd.DataFrame, y: pd.Series) -> Tuple[str, float, Any]:
+
+def train_and_log_model(model: Any, model_name: str, X: pd.DataFrame,
+                         y: pd.Series) -> Tuple[str, float, Any]:
     with mlflow.start_run(run_name=model_name):
         scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
         mean_cv_accuracy = np.mean(scores)
@@ -68,19 +72,20 @@ if __name__ == "__main__":
         "LogisticRegression", 
         X, y
     )
-    results.append((name1, score1, model1))
+    results.append((name1, score1, model1))                       
 
-    print("\n--- Training Random Forest ---")
-    name2, score2, model2 = train_and_log_model(
-        RandomForestClassifier(n_estimators=100, random_state=42), 
-        "RandomForest", 
+    print("\n--- Training Random Forest ---")                        
+    name2, score2, model2 = train_and_log_model(                         
+        RandomForestClassifier(n_estimators=100, random_state=42),             
+        "RandomForest",
         X, y
     )
     results.append((name2, score2, model2))
 
     # Determine best model
     best_model_name, best_score, best_model = max(results, key=lambda x: x[1])
-    print(f"\n🏆 Best model based on CV accuracy: {best_model_name} ({best_score:.4f})")
+    print(f"\n🏆 Best model based on CV accuracy:
+          {best_model_name} ({best_score:.4f})")
 
     # ✅ Save best model as 'best_model.pkl' for API
     best_model_path = "models/best_model.pkl"
