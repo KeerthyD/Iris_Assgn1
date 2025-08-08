@@ -19,8 +19,9 @@ def load_data() -> Tuple[pd.DataFrame, pd.Series]:
     """Loads the Iris dataset as a pandas DataFrame."""
     iris = load_iris(as_frame=True)
     df = iris.frame
-    df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width',
-'target']
+    df.columns = [
+        'sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'target'
+        ]
     X = df.drop(columns=["target"]).astype("float64")
     y = df["target"]
     return X, y
@@ -31,7 +32,7 @@ def load_data() -> Tuple[pd.DataFrame, pd.Series]:
 
 
 def train_and_log_model(model: Any, model_name: str, X: pd.DataFrame,
-y: pd.Series) -> Tuple[str, float, Any]:
+                        y: pd.Series) -> Tuple[str, float, Any]:
     with mlflow.start_run(run_name=model_name):
         scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
         mean_cv_accuracy = np.mean(scores)
@@ -67,9 +68,9 @@ if __name__ == "__main__":
         LogisticRegression(max_iter=200),
         "LogisticRegression",
         X, y)
-    
+
     results.append((name1, score1, model1))
-    print("\n--- Training Random Forest ---")                   
+    print("\n--- Training Random Forest ---")                  
     name2, score2, model2 = train_and_log_model(
         RandomForestClassifier(n_estimators=100, random_state=42),
         "RandomForest",
