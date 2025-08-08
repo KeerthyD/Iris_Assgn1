@@ -9,3 +9,4 @@ pyYAML
 Flask   
 Flask-Cors  
 notebook  
+prometheus-fastapi-instrumentator
