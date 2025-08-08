@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import joblib
 import pandas as pd
 import os
-
+from utils.logger import init_db, log_prediction
 
 # 1. Define the FastAPI app
 app = FastAPI()
@@ -42,6 +42,12 @@ def predict_species(input_data: IrisInput):
 
         prediction = model.predict(df)
         species_map = {0: "setosa", 1: "versicolor", 2: "virginica"}
-        return {"prediction": species_map[int(prediction[0])]}
+        predicted_species = species_map[int(prediction[0])]
+        log_prediction(input_data.dict(), predicted_species)
+        return {"prediction": predicted_species}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.on_event("startup")
+def startup_event():
+    init_db()
