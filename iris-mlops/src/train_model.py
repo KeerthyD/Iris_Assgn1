@@ -19,8 +19,7 @@ def load_data() -> Tuple[pd.DataFrame, pd.Series]:
     """Loads the Iris dataset as a pandas DataFrame."""
     iris = load_iris(as_frame=True)
     df = iris.frame
-    df.columns =
-    ['sepal_length', 'sepal_width', 'petal_length','petal_width', 'target']
+    df.columns = ['sepal_length', 'sepal_width', 'petal_length','petal_width', 'target']
     
     X = df.drop(columns=["target"]).astype("float64")  # Ensure schema consistency
     y = df["target"]
