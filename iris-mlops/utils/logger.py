@@ -8,6 +8,8 @@ DB_PATH = "logs/predictions.db"
 os.makedirs("logs", exist_ok=True)
 
 # Initialize DB if not exists
+
+
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
@@ -24,11 +26,13 @@ def init_db():
         ''')
         conn.commit()
 
+
 def log_prediction(data: dict, prediction: str):
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
         cursor.execute('''
-            INSERT INTO predictions (sepal_length, sepal_width, petal_length, petal_width, prediction, timestamp)
+            INSERT INTO predictions (sepal_length, sepal_width, petal_length,
+                        petal_width, prediction, timestamp)
             VALUES (?, ?, ?, ?, ?, ?)
         ''', (
             data["sepal_length"],

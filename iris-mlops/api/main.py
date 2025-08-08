@@ -48,6 +48,7 @@ def predict_species(input_data: IrisInput):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.on_event("startup")
 def startup_event():
     init_db()
