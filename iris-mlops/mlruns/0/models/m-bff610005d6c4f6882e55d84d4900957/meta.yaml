@@ -1,0 +1,10 @@
+artifact_location: file:///M:/mygit/Iris_Assgn1/iris-mlops/mlruns/0/models/m-bff610005d6c4f6882e55d84d4900957/artifacts
+creation_timestamp: 1754650849052
+experiment_id: '0'
+last_updated_timestamp: 1754650867935
+model_id: m-bff610005d6c4f6882e55d84d4900957
+model_type: null
+name: model
+source_run_id: 5a6b927592bc42bf905286062af51b08
+status: 2
+status_message: null

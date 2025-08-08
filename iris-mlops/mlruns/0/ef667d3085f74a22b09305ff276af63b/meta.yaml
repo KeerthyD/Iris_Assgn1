@@ -1,0 +1,15 @@
+artifact_uri: file:///M:/mygit/Iris_Assgn1/iris-mlops/mlruns/0/ef667d3085f74a22b09305ff276af63b/artifacts
+deleted_time: 1754649141468
+end_time: 1754648215949
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: ef667d3085f74a22b09305ff276af63b
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754648215791
+status: 4
+tags: []
+user_id: Satish

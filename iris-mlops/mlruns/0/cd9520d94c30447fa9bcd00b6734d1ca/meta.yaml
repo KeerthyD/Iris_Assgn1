@@ -1,0 +1,15 @@
+artifact_uri: file:///M:/mygit/Iris_Assgn1/iris-mlops/mlruns/0/cd9520d94c30447fa9bcd00b6734d1ca/artifacts
+deleted_time: 1754649141471
+end_time: 1754648250095
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: cd9520d94c30447fa9bcd00b6734d1ca
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754648245941
+status: 3
+tags: []
+user_id: Satish
