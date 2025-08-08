@@ -9,14 +9,15 @@ app = FastAPI()
 
 # 2. Input schema using Pydantic
 
-class IrisInput(BaseModel):
 
+class IrisInput(BaseModel):
     sepal_length: float
     sepal_width: float
     petal_length: float
     petal_width: float
 
 # 3. Load the model (adjust path if needed)
+
 
 MODEL_PATH = "models/best_model.pkl"                   
 
