@@ -35,6 +35,10 @@ This project implements an end-to-end MLOps pipeline for classifying the Iris da
 📂 Project Structure
 
 Here is a breakdown of the key files and directories in this project:
+<img width="845" height="663" alt="image" src="https://github.com/user-attachments/assets/d2f6411e-9105-47c0-a433-497fd235a9d2" />
+
+
+Here is a breakdown of the key files and directories in this project:
 
 ├── .github/workflows/
 │   └── ci-cd.yml           # GitHub Actions CI/CD workflow definition
