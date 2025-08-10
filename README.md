@@ -38,33 +38,6 @@ Here is a breakdown of the key files and directories in this project:
 <img width="845" height="663" alt="image" src="https://github.com/user-attachments/assets/d2f6411e-9105-47c0-a433-497fd235a9d2" />
 
 
-Here is a breakdown of the key files and directories in this project:
-
-├── .github/workflows/
-│   └── ci-cd.yml           # GitHub Actions CI/CD workflow definition
-│
-├── iris-mlops/
-│   ├── api/                # Contains the code for the prediction API (e.g., Flask app)
-│   ├── data/               # Stores raw and processed data (e.g., iris.csv)
-│   ├── logs/               # Directory for application logs
-│   ├── mlruns/             # Directory for MLflow experiment tracking
-│   ├── models/             # Stores serialized, trained model files (e.g., model.pkl)
-│   ├── src/                # Main source code for the ML application
-│   │   ├── __init__.py
-│   │   ├── data_processing.py
-│   │   ├── train_model.py
-│   │   └── evaluate.py
-│   ├── utils/              # Utility functions and helper scripts
-│   ├── checklog.py         # Script to check or parse log files
-│   ├── Dockerfile          # Defines the instructions to build the Docker image
-│   └── requirements.txt    # Python package dependencies for the application
-│
-├── .gitignore              # Specifies files and directories to be ignored by Git
-├── LICENSE                 # Project's software license
-├── prometheus.yml          # Configuration file for Prometheus monitoring
-├── README.md               # This README file
-└── template.py             # Script to generate the project folder structure
-
 🛠️ Technologies Used
 
     Language: Python
