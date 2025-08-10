@@ -9,12 +9,10 @@ structure = {
         "src/predict.py",
         "api/main.py",
         "models/",
-        "notebooks/eda.ipynb",
         "logs/prediction_logs.db",
         "Dockerfile",
         "requirements.txt",
         "README.md",
-        "dvc.yaml",
         ".github/workflows/ci-cd.yml"
     ]
 }

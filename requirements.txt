@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+flask
+ipykernel
+mlflow
+joblib
+pyYAML
+Flask   
+Flask-Cors  
+notebook  
+
